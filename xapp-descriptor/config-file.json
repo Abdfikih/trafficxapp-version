@@ -57,7 +57,7 @@
         ]
     },
     "controls": {
-        "ts_control_api": "rest",
-        "ts_control_ep": "http://127.0.0.1:5000/api/echo"
+        "ts_control_api": "grpc",
+        "ts_control_ep": "http://10.100.55.54:7777"
     }
 }

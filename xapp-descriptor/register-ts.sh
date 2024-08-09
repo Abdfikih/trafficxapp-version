@@ -18,8 +18,8 @@ curl -X POST "http://${httpAppmgr}:8080/ric/v1/register" -H 'accept: application
   "appVersion": "1.2.5",
   "configPath": "",
   "appInstanceName": "trafficxapp",
-  "httpEndpoint": "${httpEndpoint}:8080",
-  "rmrEndpoint": "${rmrEndpoint}:4560",
+  "httpEndpoint": "",
+  "rmrEndpoint": "10.102.212.190:4560",
   "config": "{\"name\": \"trafficxapp\", \"xapp_name\": \"trafficxapp\", \"version\": \"1.2.5\", \"containers\": [{\"name\": \"trafficxapp\", \"image\": {\"registry\": \"127.0.0.1:5000\", \"name\": \"o-ran-sc/ric-app-ts\", \"tag\": \"latest\" }}], \"messaging\": {\"ports\": [ {\"name\": \"rmr-data\", \"container\": \"trafficxapp\", \"port\": 4560, \"rxMessages\": [\"TS_QOE_PREDICTION\", \"A1_POLICY_REQ\", \"TS_ANOMALY_UPDATE\"], \"txMessages\": [\"TS_UE_LIST\", \"TS_ANOMALY_ACK\"], \"policies\": [20008], \"description\": \"rmr receive data port for trafficxapp\" }, {\"name\": \"rmr-route\", \"container\": \"trafficxapp\", \"port\": 4561, \"description\": \"rmr route port for trafficxapp\" } ] }, \"rmr\": {\"protPort\": \"tcp:4560\", \"maxSize\": 2072, \"numWorkers\": 1, \"txMessages\": [\"TS_UE_LIST\", \"TS_ANOMALY_ACK\"], \"rxMessages\": [\"TS_QOE_PREDICTION\", \"A1_POLICY_REQ\", \"TS_ANOMALY_UPDATE\"], \"policies\": [20008] }, \"controls\": {\"ts_control_api\": \"rest\", \"ts_control_ep\": \"http://127.0.0.1:5000/api/echo\" }}"
 }'
 
